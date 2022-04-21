@@ -130,7 +130,12 @@ async def on_message(message):
             response = 'nothing special, you lived.'
             await message.channel.send(response)
     elif message.content == '!GeneratePassword':
-        response = (random.choice(PasswordContents)*25)
+        x = 0
+        password = ""
+        while x <= 25:
+            password = password + random.choice(password_contents)
+            x = x + 1
+        response = (password)
         response2 = 'The password was sent to your private dms'
         response3 = 'Make sure to save this password somewhere safe'
         await message.author.send(response)
